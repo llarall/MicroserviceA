@@ -1,13 +1,18 @@
+import time
+
 INFILE1 = 'prompt.txt'
 INFILE2 = 'user_input.txt'
 OUTFILE = 'compared_result.txt'
 
 
 def main():
-    first_file = file_to_array(INFILE1)
-    second_file = file_to_array(INFILE2)
-    output = count_matching_words(first_file,second_file)
-    write_output(output,OUTFILE)
+    while True:
+        word_array1 = file_to_array(INFILE1)
+        word_array2 = file_to_array(INFILE2)
+        if len(word_array1) > 0 or len(word_array2) > 0:
+            output = count_matching_words(word_array1,word_array2)
+            write_output(output,OUTFILE)
+        time.sleep(0.5)
 
 
 def count_matching_words(array1, array2):
