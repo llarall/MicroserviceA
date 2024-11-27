@@ -23,7 +23,7 @@ def count_matching_words(array1, array2):
     while i < shortest_array_length:
         arr1_word = array1[i]
         arr2_word = array2[i]
-        if arr1_word == arr2_word:
+        if arr1_word.lower() == arr2_word.lower():
             num_matches += 1
         i += 1
     return [num_matches, longest_array_length]
